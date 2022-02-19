@@ -85,6 +85,10 @@ removeAt n xs = (head $ drop (n-1) xs,take (n-1) xs++drop n xs)
 
 --21
 insertAt w xs n = take (n-1) xs ++ [w] ++ drop (n-1) xs
+--22
+range n m 
+        | n > m = []
+        | n <= m = n : range (n+1) m
 
 main = do
     print $ insertAt 'X' "abcd" 2
