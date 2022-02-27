@@ -90,6 +90,14 @@ range n m
         | n > m = []
         | n <= m = n : range (n+1) m
 
+--Q35
+primeFactors 1 = [1]
+primeFactors n = testFactor 2 n
+testFactor m n 
+    | m >= n = [n]
+    | n `mod` m == 0 = m : testFactor m (n `div` m)
+    | otherwise = testFactor (m+1) n
+
 main = do
     print $ insertAt 'X' "abcd" 2
     -- print $ removeAt 1 "abcd"
